@@ -62,66 +62,24 @@ function App() {
             </button>
           </div>
           <div className='social--icon'>
-            <div
-              style={{
-                width: '50px',
-                height: '50px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#333C4D',
-                borderRadius: '8px',
-              }}
-            >
+            <div className='footer--icon'>
               <a href='https://linkedin.com/company/afroverse'>
-                <BiLogoLinkedinSquare
-                  style={{ fontSize: '28px', color: '#fff' }}
-                />
+                <BiLogoLinkedinSquare className='react--icon-text' />
               </a>
             </div>
-            <div
-              style={{
-                width: '50px',
-                height: '50px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#333C4D',
-                borderRadius: '8px',
-              }}
-            >
+            <div className='footer--icon'>
               <a href='https://twitter.com/afroverseapp'>
-                <BiLogoTwitter style={{ fontSize: '28px', color: '#fff' }} />
+                <BiLogoTwitter className='react--icon-text' />
               </a>
             </div>
-            <div
-              style={{
-                width: '50px',
-                height: '50px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#333C4D',
-                borderRadius: '8px',
-              }}
-            >
+            <div className='footer--icon'>
               <a href='https://www.instagram.com/afroverseapp'>
-                <BiLogoInstagram style={{ fontSize: '28px', color: '#fff' }} />
+                <BiLogoInstagram className='react--icon-text' />
               </a>
             </div>
-            <div
-              style={{
-                width: '50px',
-                height: '50px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#333C4D',
-                borderRadius: '8px',
-              }}
-            >
-              <a href='elsheikh.saf@gmail.com'>
-                <BiLogoGmail style={{ fontSize: '28px', color: '#fff' }} />
+            <div className='footer--icon'>
+              <a href='mailto:afroverseapp@gmail.com'>
+                <BiLogoGmail className='react--icon-text' />
               </a>
             </div>
           </div>
