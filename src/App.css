@@ -111,7 +111,13 @@ button {
   line-height: normal;
   /* shadows/D2 */
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
+
+.disable-btn{
+  opacity: .3;
+}
+
 .social--icon {
   margin-top: 100px;
   display: inline-flex;

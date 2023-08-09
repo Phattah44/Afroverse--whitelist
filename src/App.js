@@ -22,7 +22,7 @@ function App() {
     let email = e.target.value;
     if (validator.isEmail(email)) {
       setIsValid(false);
-      setMessage({...message, validitySuccess: 'valid email...', validilityError: ''});
+      setMessage({...message, validitySuccess: 'email is valid...', validilityError: ''});
     } else {
       setIsValid(true);
       setMessage({...message, validilityError: 'Please enter a valid email and try again...', validitySuccess: ''});
@@ -32,7 +32,7 @@ function App() {
   const onSubmitEmail = async (e) => {
     e.preventDefault();
     
-    setMessage('');
+    setMessage({...message, validilityError: '', validitySuccess: ''});
 
     try{
 
@@ -54,6 +54,9 @@ function App() {
         setValue('');
         setSuccess(data.message);
         setSubmit(true)
+      }else if(data.status === 'error'){
+        setMessage({...message, validilityError: data.message, validitySuccess: ''});
+        setValue('');
       }
   
     }catch(error){
@@ -81,7 +84,7 @@ function App() {
             mint, auction & trade, and learn about African culture
           </p>
 
-          {submit && (<p style={{background: "#98FB98", color: "black", padding: ".5rem", border: "2px solid green" , borderRadius: "5px"}}>{success}</p>)}
+          {submit && (<small style={{color: '#fff', fontWeight: 'bold', fontSize:'18px'}}>{success}</small>)}
           
            {!submit && 
           (<div className='form--input'>
@@ -106,10 +109,10 @@ function App() {
                 }}
               />
             </div>
-            {message.validilityError && (<p style={{background: "orange", color: "black", padding: ".5rem", border: "2px solid red" , borderRadius: "5px"}}>{message.validilityError}</p>)}
-            {message.validitySuccess && (<p style={{background: "#98FB98", color: "black", padding: ".5rem", border: "2px solid green" , borderRadius: "5px"}}>{message.validitySuccess}</p>)}
+            {message.validilityError && (<small style={{color: '#ED2939', padding: '0 0 0 1.9rem'}}>{message.validilityError}</small>)}
+            {message.validitySuccess && (<small style={{color: 'green', padding: '0 0 0 1.9rem'}}>{message.validitySuccess}</small>)}
 
-            <button type='submit' style={{cursor: "pointer"}} disabled={isValid} onClick={onSubmitEmail}>
+            <button type='submit' className={isValid ? 'disable-btn' : ''} disabled={isValid} onClick={onSubmitEmail}>
               Join the waitlist
             </button>
           </div>)}
